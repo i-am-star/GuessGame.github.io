@@ -1,0 +1,80 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: green;
+  color: white;
+}
+body{
+  font-family: monospace;
+  
+}
+.div_one{
+  margin: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.btn{
+width: 85px;
+padding: 8px;
+border-color: white;
+color: white;
+  height: 30px;
+  border: 1px solid white;
+  color: white;
+  padding: 5px;
+  outline: none;
+}
+h1{
+  text-align: center;
+}
+.div_three{
+  display: flex;
+  justify-content: center;
+}
+hr{
+  
+  height: 8px;
+  background-color: white;
+  margin: 25px;
+}
+.guess{
+  font-size: 18px;
+  font-weight: bold;
+  height: 50px;
+  margin: -50px;
+}
+.div_four{
+  margin: 50px;
+  font-size: 16px;
+}
+.inner_div_one{
+  /*display: flex;
+  flex-direction: column;
+  column-gap: 50px;
+  justify-content: flex-end;
+  margin-left: 250px;
+  margin-top: -80px;*/
+position: relative;
+float: right;
+margin-left: 50%;
+}
+input{
+  display: block;
+  color: white;
+  width: 100px;
+  height: 45px;
+  border: 2px solid white;
+  color: white;
+  padding: 5px;
+  outline: none;
+}
+.check{
+  margin: 10px;
+}
+::placeholder{
+  color: white;
+  font-size: 10px;
+}
