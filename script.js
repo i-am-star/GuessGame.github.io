@@ -9,8 +9,12 @@ let trial = ['💖', '💖', '💖', '💖', '💖', '💖','💖'];
 const userLife = function() {
 
   if(trial.length === 0){
-    document.querySelector('.guessing').textContent = '😢You lose. Game Over!!';
+    displayMessage('😢You lose. Game Over!!');
   }
+  }
+
+  const displayMessage = function(message){
+    document.querySelector('.guessing').textContent = message;
   }
 
 const newNumber = function() {
@@ -22,20 +26,15 @@ const x = function() {
   
   if(trial.length > 0){
 
- if(userGuess != secretNumber) {
-  trial.pop();
-  document.querySelector('.life').textContent = ` ${trial.join(" ")}`;
-}
-
   if(!userGuess){
-    document.querySelector('.guessing').textContent = `🚫 ${userGuess} is Invalid!`;
+   displayMessage(`🚫 ${userGuess} is Invalid!`);
     userLife();
     
   } 
 
   else if(userGuess === secretNumber) {
 
-    document.querySelector('.guessing').textContent = `🎉 ${userGuess} is Correct!`;
+    displayMessage(`🎉 ${userGuess} is Correct!`);
     score++;
     document.querySelector('.score').textContent = `💯Score: ${score}`;
     
@@ -46,16 +45,15 @@ const x = function() {
   userLife(); 
     newNumber(); 
   }
-   else if(userGuess > secretNumber) {
-    document.querySelector('.guessing').textContent = `${userGuess} is too high!`;
-    userLife();
-  } 
-  else if(userGuess < secretNumber) {
-    document.querySelector('.guessing').textContent = `${userGuess} is too low!`;
-    userLife();
 
+  else if(userGuess !== secretNumber){
+    trial.pop();
+  document.querySelector('.life').textContent = ` ${trial.join(" ")}`;
+   displayMessage(userGuess > secretNumber ? `${userGuess} is too high!` : `${userGuess} is too low!`);
+     userLife();
   }
 }
+
 else {
   document.querySelector('.life').textContent = ` Press restart button`;
 }
@@ -68,7 +66,7 @@ const a = function(){
 document.querySelector('.number_container').value = " ";
 document.querySelector('.life').textContent = ` ${trial.join(" ")}`;
 score = 0;
-document.querySelector('.guessing').textContent = `Start guessing...`;
+displayMessage(`Start guessing...`);
 document.querySelector('.score').textContent = `💯Score: ${score}`;
 document.querySelector('.highscore').textContent = `🥇Highscore: ${highScore}`;
 }
